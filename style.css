@@ -1,0 +1,579 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #18202a;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+
+/* HEADER */
+
+.header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+
+    padding: 24px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.header h1 {
+    margin: 0 0 6px;
+    font-size: 28px;
+}
+
+.header p {
+    margin: 0;
+    color: #6b7280;
+}
+
+
+/* BUTTON */
+
+.primary-btn {
+    background: #111827;
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    transition: 0.2s;
+}
+
+.primary-btn:hover {
+    opacity: 0.85;
+}
+
+.full {
+    width: 100%;
+}
+
+
+/* CONTAINER */
+
+.container {
+    width: min(1100px, 92%);
+    margin: 30px auto;
+}
+
+
+/* DATE */
+
+.date-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+.date-navigation > button {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: white;
+    border: 1px solid #e5e7eb;
+
+    font-size: 25px;
+}
+
+.date-info {
+    text-align: center;
+    min-width: 250px;
+}
+
+.date-info h2 {
+    margin: 5px 0 0;
+}
+
+#currentDay {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* DASHBOARD */
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 20px;
+}
+
+.stat-card span {
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+.stat-card strong {
+    font-size: 25px;
+}
+
+
+/* PROGRESS */
+
+.progress-section {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 10px;
+
+    background: #e5e7eb;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 100%;
+
+    width: 0%;
+
+    background: #111827;
+
+    transition: width 0.3s;
+}
+
+
+/* SECTIONS */
+
+.section {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    margin: 0;
+}
+
+
+/* TIMELINE */
+
+#timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.timeline-row {
+    display: grid;
+
+    grid-template-columns: 80px 1fr;
+
+    gap: 15px;
+
+    align-items: stretch;
+}
+
+.timeline-time {
+    padding-top: 18px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+.timeline-content {
+    min-height: 65px;
+}
+
+.task {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 14px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.task-info h3 {
+    margin: 0 0 5px;
+
+    font-size: 17px;
+}
+
+.task-info p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.task.completed {
+    opacity: 0.55;
+}
+
+.task.completed h3 {
+    text-decoration: line-through;
+}
+
+.task-actions {
+    display: flex;
+    gap: 7px;
+}
+
+.task-actions button {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 8px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+}
+
+.timeline-end-row {
+    min-height: 35px;
+}
+
+.timeline-end-row .timeline-content {
+    min-height: 20px;
+}
+
+
+/* EMPTY */
+
+#timeline:empty::after {
+    content: "لا توجد برامج لهذا اليوم";
+
+    display: block;
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: #94a3b8;
+}
+
+
+/* WEEK */
+
+.week-chart {
+    min-height: 190px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding-top: 20px;
+}
+
+.day-column {
+    flex: 1;
+
+    height: 160px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 7px;
+}
+
+.day-value {
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+.day-bar {
+    width: min(45px, 70%);
+
+    min-height: 4px;
+
+    background: #111827;
+
+    border-radius: 8px 8px 3px 3px;
+
+    transition: height 0.3s;
+}
+
+.day-label {
+    font-size: 12px;
+
+    color: #475569;
+
+    white-space: nowrap;
+}
+
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.45);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 100;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-box {
+    width: min(500px, 100%);
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 25px;
+}
+
+.modal-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.modal-header button {
+    background: transparent;
+
+    font-size: 28px;
+
+    color: #64748b;
+}
+
+#taskForm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+#taskForm label {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+#taskForm input,
+#taskForm select {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: white;
+}
+
+#taskForm input:focus,
+#taskForm select:focus {
+    border-color: #64748b;
+}
+
+.time-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .header p {
+        font-size: 12px;
+    }
+
+    .primary-btn {
+        padding: 10px 14px;
+    }
+
+    .container {
+        width: 94%;
+        margin-top: 20px;
+    }
+
+    .dashboard {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card strong {
+        font-size: 21px;
+    }
+
+    .timeline-row {
+        grid-template-columns: 55px 1fr;
+        gap: 8px;
+    }
+
+    .timeline-time {
+        font-size: 12px;
+    }
+
+    .task {
+        padding: 12px;
+    }
+
+    .task-info h3 {
+        font-size: 15px;
+    }
+
+    .day-label {
+        font-size: 10px;
+    }
+
+}
+
+@media (max-width: 430px) {
+
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .header .primary-btn {
+        width: 100%;
+    }
+
+    .date-info {
+        min-width: 190px;
+    }
+
+    .date-info h2 {
+        font-size: 18px;
+    }
+
+}

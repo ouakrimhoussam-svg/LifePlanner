@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>مخطط الحياة</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div>
+            <h1>مخطط الحياة</h1>
+            <p>نظّم يومك، تابع إنجازك.</p>
+        </div>
+
+        <button id="addTaskBtn" class="primary-btn">
+            + إضافة برنامج
+        </button>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- DATE -->
+
+        <section class="date-navigation">
+
+            <button id="prevDay">‹</button>
+
+            <div class="date-info">
+                <span id="currentDay"></span>
+                <h2 id="currentDate"></h2>
+            </div>
+
+            <button id="nextDay">›</button>
+
+        </section>
+
+
+        <!-- DASHBOARD -->
+
+        <section class="dashboard">
+
+            <div class="stat-card">
+                <span>إجمالي البرامج</span>
+                <strong id="totalTasks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>البرامج المنجزة</span>
+                <strong id="completedTasks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>وقت التركيز</span>
+                <strong id="focusTime">0h 0m</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>نسبة الإنجاز</span>
+                <strong id="successRate">0%</strong>
+            </div>
+
+        </section>
+
+
+        <!-- PROGRESS -->
+
+        <section class="progress-section">
+
+            <div class="progress-header">
+                <span>التقدم اليومي</span>
+                <strong id="progressText">0%</strong>
+            </div>
+
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+
+        </section>
+
+
+        <!-- TIMELINE -->
+
+        <section class="section">
+
+            <div class="section-title">
+                <h2>برنامج اليوم</h2>
+            </div>
+
+            <div id="timeline"></div>
+
+        </section>
+
+
+        <!-- WEEKLY -->
+
+        <section class="section">
+
+            <div class="section-title">
+                <h2>نظرة عامة أسبوعية</h2>
+            </div>
+
+            <div id="weekChart" class="week-chart"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- MODAL -->
+
+    <div id="taskModal" class="modal hidden">
+
+        <div class="modal-box">
+
+            <div class="modal-header">
+
+                <h2>إضافة برنامج</h2>
+
+                <button id="closeModal">×</button>
+
+            </div>
+
+
+            <form id="taskForm">
+
+                <label>
+                    اسم البرنامج
+                    <input
+                        type="text"
+                        id="taskName"
+                        placeholder="مثال: التداول"
+                        required
+                    >
+                </label>
+
+
+                <div class="time-row">
+
+                    <label>
+                        البداية
+                        <input
+                            type="time"
+                            id="startTime"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        النهاية
+                        <input
+                            type="time"
+                            id="endTime"
+                            required
+                        >
+                    </label>
+
+                </div>
+
+
+                <label>
+                    التصنيف
+
+                    <select id="taskCategory">
+
+                        <option value="study">
+                            دراسة
+                        </option>
+
+                        <option value="work">
+                            عمل
+                        </option>
+
+                        <option value="trading">
+                            تداول
+                        </option>
+
+                        <option value="sport">
+                            رياضة
+                        </option>
+
+                        <option value="personal">
+                            شخصي
+                        </option>
+
+                        <option value="other">
+                            أخرى
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn full"
+                >
+                    حفظ البرنامج
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
